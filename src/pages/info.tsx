@@ -37,6 +37,16 @@ export default function Info() {
     });
   }
 
+  function backTab() {
+    infoContext?.setInfoTab((prevTab) => {
+      const newIndex = prevTab.index - 1;
+      return {
+        index: newIndex,
+        ...tabs[newIndex],
+      };
+    });
+  }
+
   return (
     <Layout>
       <div className="space-y-7">
@@ -52,14 +62,22 @@ export default function Info() {
               return <BizForm nextTab={nextTab} />;
             default:
               return (
-                <div>
+                <div className="grid">
                   {"Tab under construction :("}
-                  <button
-                    className="py-[0.5625rem] px-[1.625rem] bg-purple text-white rounded-[6px] cursor-pointer"
-                    onClick={nextTab}
-                  >
-                    Next
-                  </button>
+                  <div className="flex justify-between">
+                    <button
+                      className="py-[0.5625rem] px-[1.625rem] border border-form-border rounded-[6px]"
+                      onClick={backTab}
+                    >
+                      Back
+                    </button>
+                    <button
+                      className="py-[0.5625rem] px-[1.625rem] bg-purple text-white rounded-[6px] cursor-pointer"
+                      onClick={nextTab}
+                    >
+                      Next
+                    </button>
+                  </div>
                 </div>
               );
           }

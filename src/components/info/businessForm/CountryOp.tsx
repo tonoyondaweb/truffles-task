@@ -1,8 +1,13 @@
-import React from "react";
+import React, { ChangeEvent } from "react";
 
-type Props = {};
+type Props = {
+  values: {
+    countryOp: string;
+  };
+  handleInput(e: ChangeEvent<HTMLInputElement | HTMLSelectElement>): void;
+};
 
-export default function CountryOp({}: Props) {
+export default function CountryOp({ values, handleInput }: Props) {
   return (
     <div className="grid flex-1">
       <label className="text-xs" htmlFor="countryOp">
@@ -12,6 +17,8 @@ export default function CountryOp({}: Props) {
         name="countryOp"
         id="countryOp"
         className="border border-form-border h-[2.3125rem] rounded-[6px] min-w-[300px] px-[0.5rem]"
+        value={values.countryOp}
+        onChange={(e) => handleInput(e)}
       >
         <option value="Afghanistan">Afghanistan</option>
         <option value="Åland Islands">Åland Islands</option>

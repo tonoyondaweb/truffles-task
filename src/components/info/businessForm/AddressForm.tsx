@@ -1,8 +1,16 @@
-import React from "react";
+import React, { ChangeEvent } from "react";
 
-type Props = {};
+type Props = {
+  values: {
+    address: string;
+    zip: string;
+    state: string;
+    city: string;
+  };
+  handleInput(e: ChangeEvent<HTMLInputElement | HTMLSelectElement>): void;
+};
 
-export default function AddressForm({}: Props) {
+export default function AddressForm({ values, handleInput }: Props) {
   return (
     <div className="space-y-7">
       <div className="grid">
@@ -14,6 +22,8 @@ export default function AddressForm({}: Props) {
           name="address"
           id="address"
           className="border border-form-border h-[2.3125rem] rounded-[6px] w-full px-[0.5rem]"
+          value={values.address}
+          onChange={(e) => handleInput(e)}
         />
       </div>
       <div className="flex flex-wrap gap-[0.5rem]">
@@ -26,6 +36,8 @@ export default function AddressForm({}: Props) {
             name="zip"
             id="zip"
             className="border border-form-border h-[2.3125rem] rounded-[6px] w-full px-[0.5rem]"
+            value={values.zip}
+            onChange={(e) => handleInput(e)}
           />
         </div>
         <div className="grid flex-1 min-w-[250px]">
@@ -37,6 +49,8 @@ export default function AddressForm({}: Props) {
             name="state"
             id="state"
             className="border border-form-border h-[2.3125rem] rounded-[6px] w-full px-[0.5rem]"
+            value={values.state}
+            onChange={(e) => handleInput(e)}
           />
         </div>
         <div className="grid flex-1 min-w-[250px]">
@@ -48,6 +62,8 @@ export default function AddressForm({}: Props) {
             name="city"
             id="city"
             className="border border-form-border h-[2.3125rem] rounded-[6px] w-full px-[0.5rem]"
+            value={values.city}
+            onChange={(e) => handleInput(e)}
           />
         </div>
       </div>

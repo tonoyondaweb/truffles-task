@@ -22,6 +22,9 @@ module.exports = {
         "hero-items": "0px 20px 27px 0px #0000000D",
         "date-view": "0px 20px 27px 0px #0000000D",
       },
+      backgroundImage: {
+        "icon-purple": "linear-gradient(135deg, #A76FFF 0%, #7445F8 100%);"
+      }
     },
   },
   plugins: [],

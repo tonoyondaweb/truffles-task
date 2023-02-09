@@ -8,7 +8,7 @@ export interface IAppProps {
 
 export default function App({ children }: IAppProps) {
   return (
-    <div>
+    <div className="max-w-[1900px] mx-auto">
       <Header />
       <div className="flex min-h-[calc(100vh-6.3rem)]">
         <Sidebar />

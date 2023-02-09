@@ -25,8 +25,8 @@ export default function NavItem({ Icon, name }: IAppProps) {
         onClick={() => setTab(name)}
       >
         <div
-          className={`p-[8.5px] rounded-[8px] transition-all ${
-            active ? "bg-purple " : "bg-white shadow-nav-icon"
+          className={`h-[2rem] w-[2rem] grid place-content-center rounded-[8px] transition-all ${
+            active ? "bg-icon-purple " : "bg-white shadow-nav-icon"
           }`}
         >
           <Icon className={active ? "fill-white" : "fill-dark-gray"} />

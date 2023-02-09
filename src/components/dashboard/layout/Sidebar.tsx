@@ -10,7 +10,7 @@ export interface IAppProps {}
 
 export default function Sidebar(props: IAppProps) {
   return (
-    <div className="px-[16px] lg:w-[288px] sticky top-[102px] h-max">
+    <div className="px-[16px] xl:w-[288px] sticky top-[102px] h-max">
       <nav>
         <ul className="space-y-[5px]">
           <Item Icon={DashboardIcon} name="dashboard"></Item>
