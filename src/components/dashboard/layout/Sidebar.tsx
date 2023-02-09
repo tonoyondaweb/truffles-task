@@ -1,16 +1,16 @@
 import Item from "./NavItem";
-import DashboardIcon from "../icons/nav/DashboardIcon";
-import InvoiceIcon from "../icons/nav/InvoiceIcon";
-import ProformaIcon from "../icons/nav/ProformaIcon";
-import SwapIcon from "../icons/nav/SwapIcon";
-import TransferIcon from "../icons/nav/TransferIcon";
-import ContactsIcon from "../icons/nav/ContactsIcon";
+import DashboardIcon from "../../icons/nav/DashboardIcon";
+import InvoiceIcon from "../../icons/nav/InvoiceIcon";
+import ProformaIcon from "../../icons/nav/ProformaIcon";
+import SwapIcon from "../../icons/nav/SwapIcon";
+import TransferIcon from "../../icons/nav/TransferIcon";
+import ContactsIcon from "../../icons/nav/ContactsIcon";
 
 export interface IAppProps {}
 
 export default function Sidebar(props: IAppProps) {
   return (
-    <div className="w-[288px] px-[16px]">
+    <div className="px-[16px] lg:w-[288px] sticky top-[102px] h-max">
       <nav>
         <ul className="space-y-[5px]">
           <Item Icon={DashboardIcon} name="dashboard"></Item>

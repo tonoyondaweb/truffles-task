@@ -10,9 +10,9 @@ export default function App({ children }: IAppProps) {
   return (
     <div>
       <Header />
-      <div className="flex">
+      <div className="flex min-h-[calc(100vh-6.3rem)]">
         <Sidebar />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 pb-5">{children}</main>
       </div>
     </div>
   );

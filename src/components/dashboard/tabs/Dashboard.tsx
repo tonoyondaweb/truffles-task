@@ -1,8 +1,8 @@
-import Alert from "../dashboard/Alert";
+import Alert from "../Alert";
 
 import React from "react";
-import Hero from "../dashboard/Hero";
-import DateView from "../dashboard/DateView";
+import Hero from "../Hero";
+import DateView from "../DateView";
 import { kycAlert } from "@/lib/data";
 
 type Props = {};

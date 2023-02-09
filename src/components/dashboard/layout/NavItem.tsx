@@ -31,7 +31,7 @@ export default function NavItem({ Icon, name }: IAppProps) {
         >
           <Icon className={active ? "fill-white" : "fill-dark-gray"} />
         </div>
-        <span className="ml-[12px] capitalize">{name}</span>
+        <span className="hidden ml-[12px] capitalize md:block">{name}</span>
       </button>
     </li>
   );

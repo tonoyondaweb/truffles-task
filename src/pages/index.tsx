@@ -1,14 +1,14 @@
 import { TabContext } from "@/lib/Context";
 import { useContext } from "react";
-import Layout from "../components/layout/Layout";
-import DashBoard from "../components/tabs/Dashboard";
-import Invoice from "../components/tabs/Invoice";
-import Proforma from "../components/tabs/Proforma";
-import Swap from "../components/tabs/Swap";
-import Transfer from "../components/tabs/Transfer";
-import Contact from "../components/tabs/Contact";
+import Layout from "../components/dashboard/layout/Layout";
+import DashBoard from "../components/dashboard/tabs/Dashboard";
+import Invoice from "../components/dashboard/tabs/Invoice";
+import Proforma from "../components/dashboard/tabs/Proforma";
+import Swap from "../components/dashboard/tabs/Swap";
+import Transfer from "../components/dashboard/tabs/Transfer";
+import Contact from "../components/dashboard/tabs/Contact";
 
-const Index = () => {
+export default function Index() {
   const tabContext = useContext(TabContext);
 
   return (
@@ -35,6 +35,4 @@ const Index = () => {
       </div>
     </Layout>
   );
-};
-
-export default Index;
+}
