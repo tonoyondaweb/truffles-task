@@ -14,9 +14,9 @@ export default function LeftNavIcon({}: Props) {
       <path
         d="M6.84998 12.6719L1.1781 7L6.84998 1.32812"
         stroke="#111827"
-        stroke-width="1.89441"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.89441"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

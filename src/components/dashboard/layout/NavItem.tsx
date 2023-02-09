@@ -23,6 +23,7 @@ export default function NavItem({ Icon, name }: IAppProps) {
           active ? "bg-white" : null
         } hover:bg-gray-200`}
         onClick={() => setTab(name)}
+        aria-label={"Navigate to " + tab}
       >
         <div
           className={`h-[2rem] w-[2rem] grid place-content-center rounded-[8px] transition-all ${

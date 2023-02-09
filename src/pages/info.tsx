@@ -2,6 +2,7 @@ import BizForm from "@/components/info/businessForm/BizForm";
 import Layout from "@/components/info/layout/Layout";
 import UserForm from "@/components/info/userForm/UserForm";
 import { TabContext } from "@/lib/Context";
+import Head from "next/head";
 import { useContext } from "react";
 
 const tabs = [
@@ -48,41 +49,46 @@ export default function Info() {
   }
 
   return (
-    <Layout>
-      <div className="space-y-7">
-        <div>
-          <h1 className="text-[1.25rem] font-semibold capitalize">{name}</h1>
-          <p className="text-[0.875rem] text-gray-custom">{desc}</p>
-        </div>
-        {(() => {
-          switch (index) {
-            case 0:
-              return <UserForm nextTab={nextTab} />;
-            case 2:
-              return <BizForm nextTab={nextTab} />;
-            default:
-              return (
-                <div className="grid">
-                  {"Tab under construction :("}
-                  <div className="flex justify-between">
-                    <button
-                      className="py-[0.5625rem] px-[1.625rem] border border-form-border rounded-[6px]"
-                      onClick={backTab}
-                    >
-                      Back
-                    </button>
-                    <button
-                      className="py-[0.5625rem] px-[1.625rem] bg-purple text-white rounded-[6px] cursor-pointer"
-                      onClick={nextTab}
-                    >
-                      Next
-                    </button>
+    <>
+      <Head>
+        <title>{`Truffles - ${infoContext?.infoTab.name.toUpperCase()}`}</title>
+      </Head>
+      <Layout>
+        <div className="space-y-7">
+          <div>
+            <h1 className="text-[1.25rem] font-semibold capitalize">{name}</h1>
+            <p className="text-[0.875rem] text-gray-custom">{desc}</p>
+          </div>
+          {(() => {
+            switch (index) {
+              case 0:
+                return <UserForm nextTab={nextTab} />;
+              case 2:
+                return <BizForm nextTab={nextTab} />;
+              default:
+                return (
+                  <div className="grid">
+                    {"Tab under construction :("}
+                    <div className="flex justify-between">
+                      <button
+                        className="py-[0.5625rem] px-[1.625rem] border border-form-border rounded-[6px]"
+                        onClick={backTab}
+                      >
+                        Back
+                      </button>
+                      <button
+                        className="py-[0.5625rem] px-[1.625rem] bg-purple text-white rounded-[6px] cursor-pointer"
+                        onClick={nextTab}
+                      >
+                        Next
+                      </button>
+                    </div>
                   </div>
-                </div>
-              );
-          }
-        })()}
-      </div>
-    </Layout>
+                );
+            }
+          })()}
+        </div>
+      </Layout>
+    </>
   );
 }

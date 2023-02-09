@@ -17,7 +17,7 @@ export default function Alert({}: Props) {
         <h3>{kycAlert.title}</h3>
         <p className="text-[0.625em]">{kycAlert.message}</p>
       </div>
-      <button className="ml-auto">
+      <button className="ml-auto" aria-label="close alert">
         <CloseIcon />
       </button>
     </div>

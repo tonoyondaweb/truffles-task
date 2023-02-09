@@ -15,15 +15,17 @@ export default function App() {
       <div className="flex-1 flex justify-between">
         <h1 className="text-lg font-bold capitalize">{tabContext?.tab}</h1>
         <div className="flex items-center gap-x-[0.5rem] ml-auto">
-          <button>
+          <Link
+            href="/info"
+            className="flex items-center"
+            aria-label="open user info"
+          >
             <UserIcon />
-          </button>
-          <Link href="/info">
             <span className="ml-[6px] mr-[10px] text-gray-custom">
               Tanay Lodh
             </span>
           </Link>
-          <button>
+          <button aria-label="open notifications">
             <BellIcon />
           </button>
         </div>

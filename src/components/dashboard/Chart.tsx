@@ -7,10 +7,18 @@ import {
   LineElement,
   Legend,
   ScriptableContext,
+  Filler,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 
-Chart.register(CategoryScale, LinearScale, PointElement, LineElement, Legend);
+Chart.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Legend,
+  Filler
+);
 
 export default function ChartComp() {
   const data = () => {
@@ -27,8 +35,8 @@ export default function ChartComp() {
           backgroundColor: (context: ScriptableContext<"line">) => {
             const ctx = context.chart.ctx;
             const gradient = ctx.createLinearGradient(0, 0, 0, 170);
-            gradient.addColorStop(0, "black");
-            gradient.addColorStop(1, "white");
+            gradient.addColorStop(0, "rgba(130, 214, 22, 0.7)");
+            gradient.addColorStop(1, "rgba(250,174,50,0)");
             return gradient;
           },
         },
@@ -41,7 +49,7 @@ export default function ChartComp() {
           backgroundColor: (context: ScriptableContext<"line">) => {
             const ctx = context.chart.ctx;
             const gradient = ctx.createLinearGradient(0, 0, 0, 200);
-            gradient.addColorStop(0, "rgba(250,174,50,1)");
+            gradient.addColorStop(0, "rgba(250,174,50,0.7)");
             gradient.addColorStop(1, "rgba(250,174,50,0)");
             return gradient;
           },

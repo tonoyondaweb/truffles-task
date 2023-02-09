@@ -37,6 +37,7 @@ export default function Submit() {
     <div className="flex justify-between">
       {infoContext?.infoTab.index! > 0 && (
         <button
+          aria-label="go back"
           className="py-[0.5625rem] px-[1.625rem] border border-form-border rounded-[6px]"
           onClick={backTab}
         >
@@ -44,6 +45,7 @@ export default function Submit() {
         </button>
       )}
       <input
+        aria-label="proceed"
         type="submit"
         value="Next"
         className="py-[0.5625rem] px-[1.625rem] bg-purple text-white rounded-[6px] cursor-pointer"

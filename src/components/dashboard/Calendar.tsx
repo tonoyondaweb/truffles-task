@@ -20,6 +20,7 @@ export default function Calendar() {
         </h1>
         <div className="flex gap-10 items-center ">
           <button
+            aria-label="Display previous month"
             onClick={() => {
               setToday(today.month(today.month() - 1));
             }}
@@ -27,6 +28,7 @@ export default function Calendar() {
             <LeftNavIcon />
           </button>
           <button
+            aria-label="Display next month"
             onClick={() => {
               setToday(today.month(today.month() + 1));
             }}
@@ -58,6 +60,9 @@ export default function Calendar() {
                 className="p-2 text-center h-14 grid place-content-center text-sm"
               >
                 <button
+                  aria-label={`Select ${
+                    months[date.month()]
+                  } ${date.date()} ${date.year()}`}
                   className={cn(
                     currentMonth ? "" : "text-gray-400",
                     selectDate.toDate().toDateString() ===
